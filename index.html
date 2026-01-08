@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Flappy bird neural network</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div>
+      <main class="container">
+        <canvas id="gameCanvas" width="400" height="600"></canvas>
+        <aside class="container">
+          <div>
+            <h3>Neural Network</h3>
+            <canvas id="nnCanvas" width="300" height="400"></canvas>
+            <div>
+              <span>Architecture: 4 → 8 → 1</span>
+            </div>
+          </div>
+          <div>
+            <h3>📊 Statistics</h3>
+            <div>
+              <div>
+                <span>Score</span>
+                <span id="scoreValue">0</span>
+              </div>
+              <div>
+                <span>Best Score</span>
+                <span id="bestScore">0</span>
+              </div>
+              <div>
+                <span>Training Samples</span>
+                <span id="sampleCount">0</span>
+              </div>
+              <div>
+                <span>Network Loss</span>
+                <span id="lossValue">-</span>
+              </div>
+              <div>
+                <span>Epochs</span>
+                <span id="epochsValue">0</span>
+              </div>
+            </div>
+            <div>
+              <h3>Controls</h3>
+              <div>
+                <button id="playBtn">Play Game</button>
+                <button id="trainBtn">Train AI</button>
+                <button id="watchBtn" disabled>Watch AI</button>
+                <button id="resetBtn">↺ Reset</button>
+              </div>
+              <div>
+                <label>
+                  <span>Learning Rate:</span>
+                  <input
+                    type="range"
+                    id="learningRate"
+                    min="0.1"
+                    max="1.0"
+                    step="0.1"
+                    value="0.1"
+                  />
+                  <span id="lrValue">0.1</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+    <script type="module" src="/game.ts"></script>
+    <script type="module" src="/app.ts"></script>
+  </body>
+</html>
